@@ -1,0 +1,17 @@
+--- 
+files: 
+  - 
+    destination: /var/www/html
+    source: /index.html
+hooks: 
+  BeforeInstall: 
+    - 
+      location: scripts/install_dependencies
+      runas: root
+      timeout: 300
+    - 
+      location: scripts/start_server
+      runas: root
+      timeout: 300
+os: linux
+version: 0.0
